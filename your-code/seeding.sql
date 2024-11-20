@@ -1,32 +1,35 @@
-insert into cars(car_id, manufacturer, model, year_, color)
-values ('0', 'Volkswagen','Tiguan', '2019','Blue'),
-('1', 'Peugeot','Rifter', '2019', 'Red'),
-('2', 'Ford','Fusion', '2018', 'White'),
-('3', 'Toyota','RAV4', '2018', 'Silver'),
-('4', 'Volvo', 'V60', '2019', 'Gray'),
-('5', 'Volvo','V60 Cross Country', '2019', 'Gray');
+-- Seleccionar la base de datos
+USE lab_mysql;
+
+-- Insertar datos en la tabla Coches
+INSERT INTO Coches (VIN, Fabricante, Modelo, Ano, Color) 
+VALUES
+('1HGBH41JXMN109186', 'Toyota', 'Corolla', 2020, 'Rojo'),
+('2FAGP9CW4HH999999', 'Ford', 'Focus', 2019, 'Negro'),
+('3FAHP0HA7AR333333', 'Chevrolet', 'Malibu', 2021, 'Azul'),
+('4T1BE32K85U227744', 'Honda', 'Civic', 2018, 'Blanco'),
+('1C4RJEAG7HC999998', 'Jeep', 'Grand Cherokee', 2022, 'Gris');
+
+-- Insertar datos en la tabla Clientes
+INSERT INTO Clientes (ID_Cliente, Nombre, Telefono, Direccion, Ciudad, Estado_Provincia, Pais, Codigo_Postal) 
+VALUES
+(1, 'Juan Pérez', 1234567890,'Paseo de la Chopera, 14', 'Madrid', 'Madrid', 'España', 45678),
+(2, 'Maria López', 9876543210, '120 SW 8th St', 'Miama', 'Florida', 'USA', 56789),
+(3, 'Carlos García', 1122334455, '40 Rue du Colisée', 'Paris', 'Ile-de-France', 'France', 67890);
 
 
-insert into costumer(costumer_id, first_name, phone_no, email, address, city, state, country, zip_code)
-values ('10001', 'Pablo Picasso', '+34 636 17 63 82', '-', 'Paseo de la Chope', 'Madrid', 'Madrid', 'Spain', '28045'),
-('20001', 'Abraham Lincoln', '+1 305 907 7086', '-', '120 SW 8th St', 'Miami', 'Florida', 'United States', '33130'),
-('30001', 'Napoleon Bonaparte', '+33 1 79 75 40 00', '-', '40 Rue du Colisée', 'Paris', 'Île-de-France', 'France', '75008');
+-- Insertar datos en la tabla Vendedores
+INSERT INTO Vendedores (ID_Vendedor, Nombre, Tienda) VALUES
+(1, 'Petey Cruiser', 'Madrid'),
+(2, 'Anna Sthesia', 'Barcelona'),
+(3, 'Paul Molive', 'Berlin'),
+(4, 'Gail Forcewind', 'Paris'),
+(5, 'Paige Turner', 'Miami');
 
-
-insert into salesperson (salesperson_id, first_name, store_name)
-values ('00001', 'Petey Cruiser', '0'),
-('00002', 'Anna Sthesia', '1'),
-('00003', 'Paul Molive', '2'),
-('00004', 'Gail Forcewind', '3'),
-('00005', 'Paige Turner', '4'),
-('00006', 'Bob Frapples', '5'),
-('00007', 'Walter Melon', '6'),
-('00008', 'Shonda Leer', 'São Paulo');
-
-insert into invoices (invoice_id, date_, car, costumer, salesperson)
-values ('852399038', '2018-08-22',	'0','1','3'),
-('731166526', '2018-12-31', '3', '0', '5'),
-('271135104', '2019-01-22', '2','2','7');
-
-
+-- Insertar datos en la tabla Facturas
+-- Usar VIN, ID_Cliente y ID_Vendedor
+INSERT INTO Facturas (Numero_Factura, Fecha, VIN, ID_Cliente, ID_Vendedor) VALUES
+(1001, '2024-01-15', '1HGBH41JXMN109186', 1, 1),
+(1002, '2024-02-20', '2FAGP9CW4HH999999', 2, 5),
+(1003, '2024-03-10', '3FAHP0HA7AR333333', 3, 4);
 
